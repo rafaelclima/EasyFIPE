@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Koulen&family=Lato&family=Nunito&family=Playfair+Display:ital@1&family=Prata&family=Raleway:ital,wght@1,100&family=Roboto&family=Roboto+Condensed&family=Teko&display=swap');
+
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url('/assets/img/hero-patio-carros.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(4px);
+}
+
+.logo {
+  margin: 3rem auto 1.5rem auto;
+}
+
+.logo img {
+  border-radius: 1rem 0 1rem 0;
+  border: 1px solid #FFFFFF;
+}
+
+.card-table {
+  width: max-content;
+  height: max-content;
+  border-radius: 1rem;
+  background-color: #1b1b1bf5;
+  box-shadow: 12px 12px 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.card-table h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 1.2rem;
+  color: #fff;
+  padding: 1.5rem;
+  text-align: center;
+  line-height: 0px;
+  margin: 0px;
+}
+
+.choose-vehicle,
+.show-result {
+  padding: 3rem;
+}
+
+.carousel {
+  perspective: 500px;
+  height: 14rem;
+  width: 22rem;
+}
+
+.carousel .carousel-item {
+  top: 20px;
+  left: 0px;
+  width: 40%;
+
+  position: absolute;
+}
+
+.carousel-item button {
+
+  font-family: Roboto, sans-serif;
+  font-weight: 0;
+  font-size: 12px;
+  color: #fff;
+  background-color: #2F2E41;
+  margin: 0 auto;
+  padding: 10px 15px;
+  border: solid #6d63ff 2px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+  border-radius: 8px;
+  transition: 381ms;
+  transform: translateY(0);
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.carousel-item button:hover {
+
+  transition: 381ms;
+  padding: 10px 30px;
+  transform: translateY(-0px);
+  background-color: #6D63FF;
+  color: #000000;
+  border: solid 2px #2f2e41;
+}
+
+.btn-vehicle i {
+  font-size: .65rem;
+  margin-left: .3rem;
+  align-self: center;
+  justify-self: center;
+}
+
+.container-select {
+  position: relative;
+  top: -12px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #2F2E41;
+  background-image: none;
+  flex: 1;
+  padding: 0 .5em;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1em;
+  font-family: Roboto, sans-serif;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+.select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #6d63ff;
+  cursor: pointer;
+  pointer-events: none;
+  transition: .25s all ease;
+}
+
+.select:hover::after {
+  color: #FFFFFF;
+}
+
+.vehicle-model {
+  margin: 1.5rem 0rem;
+}
+
+.form-group {
+  opacity: 0;
+  transition: 0.3s all ease;
+}
+
+.form-group input {
+  color: #fff;
+}
+
+.show-result {
+  position: relative;
+}
+
+.show-result img {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 80%;
+  height: 80%;
+
+  opacity: 1;
+  transition: 0.3s all ease;
+}
+
+.vehicle-model,
+.vehicle-brand,
+.vehicle-year {
+  visibility: hidden;
+  transition: 0.3s all ease;
+}

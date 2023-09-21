@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="./assets/script/script.js" defer></script>
+  <title>EasyFIPE - Preços transparentes</title>
+</head>
+
+<body>
+  <div class="logo">
+    <img src="/assets/img/logo_easyfipe-blackgray.png" alt="Logo Easy FIPE">
+  </div>
+  <div class="card-table">
+    <div class="choose-vehicle">
+      <h2>Selecione o tipo do veículo</h2>
+      <div class="carousel">
+        <a href="#two" class="carousel-item">
+          <!-- <p>Carro</p> -->
+          <img src="./assets/img/car.png" alt="Carro">
+          <button class="btn-vehicle" type="button" data-js-type="carros"><i
+              class="bi bi-hand-index-thumb-fill"></i>Carro</button>
+        </a>
+
+        <a href="#one" class="carousel-item">
+          <!-- <p>Moto</p> -->
+          <img src="./assets/img/moto.png" alt="Moto">
+          <button class="btn-vehicle" type="button" data-js-type="motos"><i
+              class="bi bi-hand-index-thumb-fill"></i>Moto</button>
+        </a>
+
+        <a href="#three" class="carousel-item">
+          <!-- <p>Caminhão</p> -->
+          <img src="./assets/img/truck.png" alt="Caminhão">
+          <button class="btn-vehicle" type="button" data-js-type="caminhoes"><i
+              class="bi bi-hand-index-thumb-fill"></i>Caminhão</button>
+        </a>
+      </div>
+
+      <div class="container-select">
+        <div class="select vehicle-brand">
+          <select name="brand" id="brand">
+            <option selected disabled>Qual a marca do veículo?</option>
+          </select>
+        </div>
+
+        <div class="select vehicle-model">
+          <select name="model" id="model">
+            <option selected disabled>Qual o modelo do veículo?</option>
+          </select>
+        </div>
+
+        <div class="select vehicle-year">
+          <select name="year" id="year">
+            <option selected disabled>Qual o ano do veículo?</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="show-result">
+      <img src="/assets/img/money.svg" alt="Mulher fazendo cálculos" class="show-result-img">
+      <div class="form-group">
+        <label for="valor">Valor</label>
+        <input type="text" id="valor" name="valor" placeholder="R$ 0.00">
+      </div>
+
+      <div class="form-group">
+        <label for="ano">Ano</label>
+        <input type="text" id="ano" name="ano" placeholder="2023">
+      </div>
+
+      <div class="form-group">
+        <label for="marca">Marca</label>
+        <input type="text" id="marca" name="marca" placeholder="Volkswagen">
+      </div>
+
+      <div class="form-group">
+        <label for="modelo">Modelo</label>
+        <input type="text" id="modelo" name="modelo" placeholder="Gol">
+      </div>
+
+      <div class="form-group">
+        <label for="tipoDeCombustivel">Tipo de Combustível</label>
+        <input type="text" id="tipoDeCombustivel" name="tipoDeCombustivel" placeholder="Gasolina">
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+  integrity="sha512-NiWqa2rceHnN3Z5j6mSAvbwwg3tiwVNxiAQaaSMSXnRRDh5C2mk/+sKQRw8qjV1vN4nf8iK2a0b048PnHbyx+Q=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('.carousel').carousel({
+      dist: -120,
+      shift: 20,
+    })
+  })
+</script>
+
+</html>
