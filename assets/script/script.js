@@ -6,6 +6,10 @@ const vehicleTypeClick = document.querySelectorAll('.btn-vehicle')
 const divSelectBrand = document.querySelector('.vehicle-brand')
 const divSelectModel = document.querySelector('.vehicle-model')
 const divSelectYear = document.querySelector('.vehicle-year')
+const chooseVehicle = document.querySelector('.choose-vehicle')
+const showResult = document.querySelector('.show-result')
+const formGroup = document.querySelectorAll('.form-group')
+const btnMobile = document.querySelector('.btn-mobile')
 let vehicleType
 
 async function fipModel(vehicleType) {
@@ -171,14 +175,59 @@ selectVehicleYear.addEventListener('change', function() {
       inputCombustivel.value = Combustivel
 
     }).then(() => {
-      const formGroup = document.querySelectorAll('.form-group')
-      const resultImg = document.querySelector('.show-result-img')
 
-      resultImg.style.opacity = 0
+      const resultImg = document.querySelector('.show-result-img')
 
       formGroup.forEach((form) => {
         form.style.opacity = 1
       })
+
+      if (window.innerWidth <= 430) {
+
+        chooseVehicle.style.opacity = 0
+        chooseVehicle.style.zIndex = -1
+
+        showResult.style.zIndex = 1
+
+        btnMobile.style.display = 'block'
+      }
+
+      resultImg.style.opacity = 0
+
     })
+
+})
+
+btnMobile.addEventListener('click', () => {
+
+  /**
+   * *.show-result: z-index = -1;
+   * *.choose-vehicle: z-index = 1 / opacity = 1;
+   * *.form-group: opacity = 0;
+   * *.divSelectBrand, .divSelectModel, .divSelectYear = visibility = 'hidden'
+   * *btnMobile.style.display = 'none'
+   */
+
+setTimeout(() => {
+  showResult.style.zIndex = -1;
+  chooseVehicle.style.zIndex = 1
+  chooseVehicle.style.opacity = 1
+  formGroup.forEach((form) => {
+    form.style.opacity = 0
+  })
+}, 400)
+
+selectVehicleModel.innerHTML = ''
+selectVehicleBrand.innerHTML = ''
+selectVehicleYear.innerHTML = ''
+
+divSelectBrand.style.visibility = 'hidden'
+divSelectModel.style.visibility = 'hidden'
+divSelectYear.style.visibility = 'hidden'
+
+  setTimeout(() => {
+    btnMobile.style.display = 'none'
+  }, 420)
+
 
 })

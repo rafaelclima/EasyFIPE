@@ -74,7 +74,7 @@ body {
   position: absolute;
 }
 
-.carousel-item button {
+.btn-vehicle {
 
   font-family: Roboto, sans-serif;
   font-weight: 0;
@@ -95,7 +95,7 @@ body {
   cursor: pointer;
 }
 
-.carousel-item button:hover {
+.btn-vehicle:hover {
 
   transition: 381ms;
   padding: 10px 30px;
@@ -203,5 +203,77 @@ select::-ms-expand {
 .vehicle-brand,
 .vehicle-year {
   visibility: hidden;
-  transition: 0.3s all ease;
+  /* transition: 0.3s all ease; */
+}
+
+.btn-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 430px) {
+
+  body {
+    min-height: 0;
+    height: 100vh;
+  }
+
+  .logo {
+    margin: 1.5rem auto;
+  }
+
+  .logo img {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .card-table {
+    width: 95%;
+    height: 62vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow: 4px 4px 2px;
+  }
+
+  .card-table h2 {
+    padding: .75rem;
+  }
+
+  .choose-vehicle,
+  .show-result {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .choose-vehicle {
+    position: absolute;
+  }
+
+  .show-result {
+    z-index: -1;
+  }
+
+  .show-result img {
+    display: none;
+  }
+
+  .btn-mobile button {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+
+    padding: 15px 20px;
+  }
+
+  .btn-mobile button:hover {
+    color: #fff;
+    padding: 15px 40px;
+  }
+
+  .btn-mobile button i {
+    font-size: 1rem;
+    margin-right: .2rem;
+  }
+
 }
