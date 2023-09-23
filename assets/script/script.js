@@ -208,22 +208,31 @@ btnMobile.addEventListener('click', () => {
    * *btnMobile.style.display = 'none'
    */
 
-setTimeout(() => {
-  showResult.style.zIndex = -1;
-  chooseVehicle.style.zIndex = 1
-  chooseVehicle.style.opacity = 1
-  formGroup.forEach((form) => {
-    form.style.opacity = 0
+  setTimeout(() => {
+    showResult.style.zIndex = -1;
+    chooseVehicle.style.zIndex = 1
+    chooseVehicle.style.opacity = 1
+    formGroup.forEach((form) => {
+      form.style.opacity = 0
+    })
+  }, 400)
+
+  const vehicleSelects = document.querySelectorAll('.selects-vehicle')
+
+  vehicleSelects.forEach((vehicleSelect) => {
+    const defaultOptionSelect = vehicleSelect.querySelector("option[data-js-type='default-option']");
+    
+    vehicleSelect.innerHTML = ''
+
+    vehicleSelect.appendChild(defaultOptionSelect)
+
+    defaultOptionSelect.selected = true
   })
-}, 400)
 
-selectVehicleModel.innerHTML = ''
-selectVehicleBrand.innerHTML = ''
-selectVehicleYear.innerHTML = ''
 
-divSelectBrand.style.visibility = 'hidden'
-divSelectModel.style.visibility = 'hidden'
-divSelectYear.style.visibility = 'hidden'
+  divSelectBrand.style.visibility = 'hidden'
+  divSelectModel.style.visibility = 'hidden'
+  divSelectYear.style.visibility = 'hidden'
 
   setTimeout(() => {
     btnMobile.style.display = 'none'

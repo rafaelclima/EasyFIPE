@@ -74,7 +74,8 @@ body {
   position: absolute;
 }
 
-.btn-vehicle {
+.btn-vehicle,
+.btn-vehicle-mobile {
 
   font-family: Roboto, sans-serif;
   font-weight: 0;
@@ -95,7 +96,8 @@ body {
   cursor: pointer;
 }
 
-.btn-vehicle:hover {
+.btn-vehicle:hover,
+.btn-vehicle-mobile:hover {
 
   transition: 381ms;
   padding: 10px 30px;
@@ -105,7 +107,8 @@ body {
   border: solid 2px #2f2e41;
 }
 
-.btn-vehicle i {
+.btn-vehicle i,
+.btn-vehicle-mobile i {
   font-size: .65rem;
   margin-left: .3rem;
   align-self: center;
