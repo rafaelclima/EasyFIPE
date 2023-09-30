@@ -181,6 +181,10 @@ selectVehicleYear.addEventListener('change', function() {
           
           if (document.querySelector('.img-container').style.display = 'flex') {
             document.querySelector('.img-container').style.display = 'none'
+            formGroup.forEach((form) => {
+              form.style.display = 'none';
+              // form.style.opacity = 1
+            })
           }
 
           document.querySelector('.loader-wrapper').style.display = 'flex';
@@ -194,38 +198,36 @@ selectVehicleYear.addEventListener('change', function() {
 
           document.querySelector('.loader-wrapper').style.display = 'none';
 
-          const vehicleImgContainer = document.querySelector('.img-container');
-          vehicleImgContainer.style.display = 'flex';
+          document.querySelector('.img-container').style.display = 'flex';
 
         } catch (error) {
           console.error(error)
         }
       }
 
-      getSrcImage()
+      document.querySelector('.show-result-img').style.filter = 'blur(10px)';
 
-    }).then(() => {
-
-      const resultImg = document.querySelector('.show-result-img')
-
-      formGroup.forEach((form) => {
-        form.style.opacity = 1
+      getSrcImage().then(() => {
+        document.querySelector('.show-result-img').style.display = 'none';
+        formGroup.forEach((form) => {
+          form.style.display = 'block';
+          // form.style.opacity = 1
+        })
+  
+        if (window.innerWidth <= 430) {
+  
+          chooseVehicle.style.opacity = 0
+          chooseVehicle.style.zIndex = -1
+  
+          showResult.style.zIndex = 1
+  
+          btnMobile.style.display = 'block'
+        }
+  
       })
-
-      if (window.innerWidth <= 430) {
-
-        chooseVehicle.style.opacity = 0
-        chooseVehicle.style.zIndex = -1
-
-        showResult.style.zIndex = 1
-
-        btnMobile.style.display = 'block'
-      }
-
-      resultImg.style.visibility = 'hidden'
-
+      
     })
-
+    
 })
 
 btnMobile.addEventListener('click', () => {
@@ -243,7 +245,8 @@ btnMobile.addEventListener('click', () => {
     chooseVehicle.style.zIndex = 1
     chooseVehicle.style.opacity = 1
     formGroup.forEach((form) => {
-      form.style.opacity = 0
+      form.style.display = 'none';
+      // form.style.opacity = 0
     })
   }, 400)
 
