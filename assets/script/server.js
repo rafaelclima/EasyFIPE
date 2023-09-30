@@ -30,12 +30,9 @@ async function getGoogleImage(vehicleBrand, vehicleModel, vehicleYear) {
   await page.keyboard.down('Enter');
   await page.keyboard.up('Enter');
 
-  await page.waitForSelector('.fR600b.islir img');
-
-  await page.waitForFunction(() => {
-    const img = document.querySelector('.fR600b.islir img');
-    return img.complete && img.naturalHeight !== 0;
-  });
+  await page.waitForNavigation()
+  //await page.waitForSelector('.fR600b.islir img');
+  // new Promise(r => setTimeout(r, 2500));
 
   const imgSrc = await page.$eval('.fR600b.islir img', img => img.src);
 
