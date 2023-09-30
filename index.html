@@ -4,19 +4,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon-16x16.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     integrity="sha512-UJfAaOlIRtdR+0P6C3KUoTDAxVTuy3lnSXLyLKlHYJlcSU8Juge/mjeaxDNMlw9LgeIotgz5FP8eUQPhX1q10A=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
   <script src="./assets/script/script.js" defer></script>
   <title>EasyFIPE - Preços transparentes</title>
 </head>
 
 <body>
   <div class="logo">
-    <img src="/assets/img/logo_easyfipe-blackgray.png" alt="Logo Easy FIPE">
+    <img src="./assets/img/logo_easyfipe-blackgray.png" alt="Logo Easy FIPE">
   </div>
   <div class="card-table">
     <div class="choose-vehicle">
@@ -68,7 +68,16 @@
     </div>
 
     <div class="show-result">
-      <img src="/assets/img/money.svg" alt="Mulher fazendo cálculos" class="show-result-img">
+      <div class="loader-wrapper">
+        <div class="loader"></div>
+      </div>
+
+      <img src="./assets/img/money.svg" alt="Mulher fazendo cálculos" class="show-result-img">
+
+      <div class="img-container">
+        <img src="" alt="modelo do carro">
+      </div>
+
       <div class="form-group">
         <label for="valor">Valor</label>
         <input type="text" id="valor" name="valor" placeholder="R$ 0.00">
@@ -100,7 +109,6 @@
     <button class="btn-vehicle-mobile" type="button" data-js-type="new-search"><i class="bi bi-arrow-clockwise"></i>Nova
       Consulta</button>
   </div>
-
 
 </body>
 

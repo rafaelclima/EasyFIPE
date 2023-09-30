@@ -41,6 +41,7 @@ async function fipValue(vehicleType , id, model, year) {
   return response
 }
 
+
 vehicleTypeClick.forEach(item => {
   item.addEventListener('click', function() {
     vehicleType = item.dataset.jsType
@@ -174,6 +175,35 @@ selectVehicleYear.addEventListener('change', function() {
       inputModelo.value = Modelo
       inputCombustivel.value = Combustivel
 
+      async function getSrcImage() {
+
+        try {
+          
+          if (document.querySelector('.img-container').style.display = 'flex') {
+            document.querySelector('.img-container').style.display = 'none'
+          }
+
+          document.querySelector('.loader-wrapper').style.display = 'flex';
+
+          const response = await fetch(`http://localhost:3300/?vehicleBrand=${Marca}&vehicleModel=${Modelo}&vehicleYear=${AnoModelo}`);
+          
+          const data = await response.text();
+
+          const vehicleImg = document.querySelector('.img-container img');
+          vehicleImg.src = data
+
+          document.querySelector('.loader-wrapper').style.display = 'none';
+
+          const vehicleImgContainer = document.querySelector('.img-container');
+          vehicleImgContainer.style.display = 'flex';
+
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+      getSrcImage()
+
     }).then(() => {
 
       const resultImg = document.querySelector('.show-result-img')
@@ -192,7 +222,7 @@ selectVehicleYear.addEventListener('change', function() {
         btnMobile.style.display = 'block'
       }
 
-      resultImg.style.opacity = 0
+      resultImg.style.visibility = 'hidden'
 
     })
 

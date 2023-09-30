@@ -12,7 +12,7 @@ body {
   width: 100%;
   min-height: 100vh;
 
-  background-image: url('/assets/img/hero-patio-carros.jpg');
+  background-image: url('../img/hero-patio-carros.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: content-box;
@@ -178,6 +178,34 @@ select::-ms-expand {
   margin: 1.5rem 0rem;
 }
 
+/* ESTILOS Imagem */
+.img-container {
+  display: none;
+  width: 100%;
+  height: 200px;
+  margin-bottom: .5rem;
+  border-radius: .75rem;
+  overflow: hidden;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  border: 4px solid #6D63FF;
+}
+
+/* Estilo para a imagem dentro do círculo */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de "saltar" no hover */
+.img-container:hover img {
+  transform: scale(1.1);
+}
+
+
 .form-group {
   opacity: 0;
   transition: 0.3s all ease;
@@ -187,18 +215,47 @@ select::-ms-expand {
   color: #fff;
 }
 
+/* ESTILOS Loading */
+
+.loader-wrapper {
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 8px solid rgba(255, 255, 255, 0.3);
+  border-top: 8px solid #6D63FF;
+  /* Cor do spinner */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .show-result {
   position: relative;
 }
 
-.show-result img {
+.show-result-img {
   position: absolute;
   top: 60px;
   left: 20px;
   width: 80%;
   height: 80%;
 
-  opacity: 1;
+  visibility: visible;
   transition: 0.3s all ease;
 }
 
@@ -258,7 +315,7 @@ select::-ms-expand {
     z-index: -1;
   }
 
-  .show-result img {
+  .show-result-img {
     display: none;
   }
 
