@@ -1,41 +1,47 @@
-const cors = require('cors');
-const puppeteer = require('puppeteer');
+const cors = require("cors");
+const puppeteer = require("puppeteer");
+const express = require("express");
 
-const express = require('express');
 const app = express();
-
 app.use(cors());
-app.get('/', async(req , res) => {
 
-  const vehicleBrand = req.query.vehicleBrand;
-  const vehicleModel = req.query.vehicleModel;
-  const vehicleYear = req.query.vehicleYear;
-  
-  const srcImg = await getGoogleImage(vehicleBrand, vehicleModel, vehicleYear);
-  
-  res.send(srcImg);
+app.get("/", async (req, res) => {
+	const { vehicleBrand, vehicleModel, vehicleYear } = req.query;
 
-})
+	try {
+		const srcImg = await getGoogleImage(
+			vehicleBrand,
+			vehicleModel,
+			vehicleYear,
+		);
+		res.send(srcImg);
+	} catch (error) {
+		console.error("Erro ao buscar imagem:", error);
+		res.status(500).send("Erro ao obter a imagem");
+	}
+});
 
-app.listen('3300');
+app.listen(3300, () => console.log("Servidor rodando na porta 3300"));
 
 async function getGoogleImage(vehicleBrand, vehicleModel, vehicleYear) {
-  const browser = await puppeteer.launch({ headless: "new" });
-  const page = await browser.newPage();
+	const browser = await puppeteer.launch({ headless: "new" });
+	const page = await browser.newPage();
 
-  await page.goto('https://www.google.com/imghp');
+	await page.goto("https://www.google.com/imghp");
+	await page.type(".gLFyf", `${vehicleBrand} ${vehicleModel} ${vehicleYear}`);
+	await page.keyboard.press("Enter");
 
-  await page.type('.gLFyf', `${vehicleBrand} ${vehicleModel} ${vehicleYear}`);
+	await page.waitForNavigation({ waitUntil: "networkidle2" });
 
-  await page.keyboard.down('Enter');
-  await page.keyboard.up('Enter');
+	const imgSrc = await page.$$eval('img[id^="dimg_"]', (imgs) =>
+		imgs.length > 0 ? imgs[0].src : null,
+	);
 
-  await page.waitForNavigation()
-  //await page.waitForSelector('.fR600b.islir img');
-  // new Promise(r => setTimeout(r, 2500));
+	await browser.close();
 
-  const imgSrc = await page.$eval('.fR600b.islir img', img => img.src);
+	if (!imgSrc) {
+		throw new Error("Nenhuma imagem encontrada.");
+	}
 
-  await browser.close();
-  return imgSrc;
+	return imgSrc;
 }
