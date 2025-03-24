@@ -40,7 +40,7 @@ EasyFIPE é uma aplicação web que facilita a busca de preços de veículos usa
 
 ## 📸 Capturas de Tela
 
-  ![enter image description here](./.gitassets/pc_01)
+  ![EasyFIP](https://github.com/rafaelclima/EasyFIPE/blob/main/.gitassets/capa.png?raw=true)
   
 
 ## 📜 Licença
