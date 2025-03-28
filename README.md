@@ -3,13 +3,29 @@
 
 EasyFIPE é uma aplicação web que facilita a busca de preços de veículos usando a API da FIPE e imagens do Google Imagens.  Encontre o valor de carros, motos e caminhões com rapidez e precisão!
 
-[![Node.js](https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![Puppeteer](https://img.shields.io/badge/Puppeteer-303F9F?style=for-the-badge&logo=puppeteer&logoColor=white)](https://pptr.dev/)
-[![Materialize](https://img.shields.io/badge/Materialize-00897B?style=for-the-badge&logo=materialize&logoColor=white)](https://materializecss.com/)
-[![Bootstrap Icons](https://img.shields.io/badge/Bootstrap%20Icons-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://icons.getbootstrap.com/)
-[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-[![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://jquery.com/)
+<div data-badges>
+  <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js">
+  </a>
+  <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Express.js-404D59?style=for-the-badge&logo=express&logoColor=white" alt="Express.js">
+  </a>
+  <a href="https://pptr.dev/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Puppeteer-303F9F?style=for-the-badge&logo=puppeteer&logoColor=white" alt="Puppeteer">
+  </a>
+  <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Materialize-00897B?style=for-the-badge&logo=materialize&logoColor=white" alt="Materialize">
+  </a>
+  <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Bootstrap%20Icons-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Icons">
+  </a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+  </a>
+  <a href="https://jquery.com/" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery">
+  </a>
+</div>
 
 
 ## Recursos 🚀
